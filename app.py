@@ -527,7 +527,7 @@ elif secao == "14. Checklists Detalhados":
         st.error("❌ **Critérios de BLOQUEIO:** Produto incompleto, Falta de frota adequada, Prazo não validado. ➡️ **Entrega NÃO autorizada**")
 
     st.markdown("---")
-    st.info("**REGRA GERAL (vale para todos os Gates):** Gate sem checklist preenchido = Gate inexistente. Pedido que pula Gate = quebra de governança[cite: 487, 488].")
+    st.info("**REGRA GERAL (vale para todos os Gates):** Gate sem checklist preenchido = Gate inexistente. Pedido que pula Gate = quebra de governança.")
     
     st.subheader("Recomendações práticas (experiência de campo)")
     st.write("1. Cada checklist vira formulário simples (Google / ERP)[cite: 490].")
