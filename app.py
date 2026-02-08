@@ -55,7 +55,7 @@ elif secao == "1. Fato Central":
     st.header("1️⃣ Fato Central")
     st.error("A empresa não opera por sistema, opera por compensação humana.")
     st.write("""
-    O negócio se mantém funcional porque pessoas experientes:
+    O negócio se mantém funcional porque pessoas são experientes:
     * **Antecipam** problemas,
     * **Apagam** incêndios,
     * **Improvisam** soluções.
