@@ -121,7 +121,7 @@ elif secao == "3. Manifestação por Área":
         st.write("* Conhece o caixa atual.")
         st.write("* Não controla o fluxo futuro.")
         st.write("* Prioriza pagamento por urgência, não por planejamento.")
-        st.write("* “Não” técnico não é respeitado.")
+        st.write("* O “Não” técnico não é respeitado.")
         st.write("➡️ **Funciona como caixa, não como gestor financeiro.**")
         
         st.markdown("### 🟨 Gerência Geral (Wilson)")
