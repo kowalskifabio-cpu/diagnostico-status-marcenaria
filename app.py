@@ -530,10 +530,10 @@ elif secao == "14. Checklists Detalhados":
     st.info("**REGRA GERAL (vale para todos os Gates):** Gate sem checklist preenchido = Gate inexistente. Pedido que pula Gate = quebra de governança.")
     
     st.subheader("Recomendações práticas (experiência de campo)")
-    st.write("1. Cada checklist vira formulário simples (Google / ERP)[cite: 490].")
-    st.write("2. Checklists assinados (nome + data)[cite: 491].")
-    st.write("3. Auditoria semanal: pedidos que passaram sem checklist[cite: 492].")
-    st.write("4. Primeiras 3 semanas terão atrito — isso é esperado[cite: 493].")
+    st.write("1. Cada checklist vira formulário simples (Google / ERP).")
+    st.write("2. Checklists assinados (nome + data).")
+    st.write("3. Auditoria semanal: pedidos que passaram sem checklist.")
+    st.write("4. Primeiras 3 semanas terão atrito — isso é esperado.")
 
 elif secao == "15. Rotina Semanal de Governança":
     st.header("ROTINA SEMANAL DE GOVERNANÇA")
