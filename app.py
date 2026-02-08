@@ -111,7 +111,7 @@ elif secao == "3. Manifestação por Área":
         
         st.markdown("### 🟦 Compras")
         st.write("* Atua além do papel técnico.")
-        st.write("* Apaga incêndios criados upstream.")
+        st.write("* Apaga incêndios criados upstream (fases anteriores).")
         st.write("* Compra com informação incompleta.")
         st.write("* Vive urgência como rotina.")
         st.write("➡️ **É amortecedor do caos, não causa.**")
