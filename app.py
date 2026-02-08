@@ -420,43 +420,120 @@ elif secao == "13. RACI e Recomendações":
     """)
 elif secao == "14. Checklists Detalhados":
     st.header("CHECKLISTS OPERACIONAIS POR GATE")
-    
-    with st.expander("📝 GATE 1 — ACEITE TÉCNICO"):
-        st.write("**Responsável:** Dono do Pedido | **Executor:** PCP")
-        st.markdown("""
-        * **Inf. Comerciais:** Pedido no sistema, Cliente id, Tipo de obra, Responsável id.
-        * **Escopo Técnico:** Projeto mínimo, Ambientes, Materiais principais, Itens fora do padrão.
-        * **Prazo:** Solicitado registrado, Avaliado tecnicamente, Risco identificado.
-        * **Governança:** Dono definido, PCP validou, Aprovado formalmente.
-        """)
-        st.error("Critérios de Bloqueio: Projeto incompleto, Dono indefinido, Prazo inviável.")
+    st.markdown("---")
 
+    # GATE 1
+    with st.expander("📝 GATE 1 — ACEITE TÉCNICO DO PEDIDO"):
+        st.write("**Objetivo:** impedir entrada de pedido mal definido")
+        st.write("**Momento:** antes de qualquer planejamento ou promessa interna")
+        st.write("**Responsável (R):** Dono do Pedido (DP) | **Executor (E):** PCP")
+        
+        st.markdown("### Checklist Obrigatório")
+        st.markdown("#### 🔹 Informações Comerciais")
+        st.checkbox("Pedido registrado no sistema", key="g1_c1")
+        st.checkbox("Cliente identificado", key="g1_c2")
+        st.checkbox("Tipo de obra definido (residencial / corporativa / construtora)", key="g1_c3")
+        st.checkbox("Responsável do cliente identificado", key="g1_c4")
+        
+        st.markdown("#### 🔹 Escopo Técnico")
+        st.checkbox("Projeto mínimo recebido (plantas / medidas críticas)", key="g1_e1")
+        st.checkbox("Ambientes definidos", key="g1_e2")
+        st.checkbox("Materiais principais definidos (MDF, pintura, especiais)", key="g1_e3")
+        st.checkbox("Itens fora do padrão identificados", key="g1_e4")
+        
+        st.markdown("#### 🔹 Prazo (prévia)")
+        st.checkbox("Prazo solicitado pelo comercial registrado", key="g1_p1")
+        st.checkbox("Prazo avaliado tecnicamente", key="g1_p2")
+        st.checkbox("Risco de prazo identificado (se houver)", key="g1_p3")
+        
+        st.markdown("#### 🔹 Governança")
+        st.checkbox("Dono do Pedido definido", key="g1_g1")
+        st.checkbox("PCP validou viabilidade inicial", key="g1_g2")
+        st.checkbox("Pedido aprovado formalmente", key="g1_g3")
+        
+        st.error("❌ **Critérios de BLOQUEIO:** Projeto incompleto, Dono do pedido indefinido, Prazo inviável sem ajuste. ➡️ **Pedido BLOQUEADO até correção**")
+
+    # GATE 2
     with st.expander("📝 GATE 2 — LIBERAÇÃO DE PRODUÇÃO"):
-        st.write("**Responsável:** PCP | **Executor:** Produção")
-        st.markdown("""
-        * **Planejamento:** Sequenciado, Capacidade validada, Gargalo id e protegido.
-        * **Projeto:** Técnico liberado, Medidas conferidas, Versão registrada.
-        * **Comunicação:** Produção ciente, Prazo interno, Alterações registradas.
-        """)
-        st.error("Critérios de Bloqueio: Fora da sequência, Gargalo saturado, Sem liberação formal.")
+        st.write("**Objetivo:** garantir que a produção execute plano, não urgência")
+        st.write("**Momento:** antes de cortar material")
+        st.write("**Responsável (R):** PCP | **Executor (E):** Produção")
+        
+        st.markdown("### Checklist Obrigatório")
+        st.markdown("#### 🔹 Planejamento")
+        st.checkbox("Pedido sequenciado na programação", key="g2_pl1")
+        st.checkbox("Capacidade validada", key="g2_pl2")
+        st.checkbox("Gargalo identificado", key="g2_pl3")
+        st.checkbox("Gargalo protegido no plano", key="g2_pl4")
+        
+        st.markdown("#### 🔹 Projeto")
+        st.checkbox("Projeto técnico liberado", key="g2_pr1")
+        st.checkbox("Medidas conferidas", key="g2_pr2")
+        st.checkbox("Versão do projeto registrada", key="g2_pr3")
+        
+        st.markdown("#### 🔹 Comunicação")
+        st.checkbox("Produção ciente do plano", key="g2_co1")
+        st.checkbox("Prazo interno registrado", key="g2_co2")
+        st.checkbox("Alterações registradas (se houver)", key="g2_co3")
+        
+        st.error("❌ **Critérios de BLOQUEIO:** Pedido fora da sequência, Gargalo saturado sem ajuste, Projeto sem liberação formal. ➡️ **Produção NÃO inicia**")
 
+    # GATE 3
     with st.expander("📝 GATE 3 — MATERIAL GARANTIDO"):
-        st.write("**Responsável:** Financeiro | **Executor:** Compras")
-        st.markdown("""
-        * **Materiais:** Lista validada, Quantidades conferidas, Especiais id.
-        * **Compras:** Fornecedores id, Lead times confirmados, Datas registradas.
-        * **Financeiro:** Impacto no caixa, Compra autorizada, Pagamento definido.
-        """)
-        st.error("Critérios de Bloqueio: Material crítico não comprado, Financeiro não aprovou, Lead time incompatível.")
+        st.write("**Objetivo:** eliminar produção sem material")
+        st.write("**Momento:** antes do início físico da produção")
+        st.write("**Responsável (R):** Financeiro | **Executor (E):** Compras")
+        
+        st.markdown("### Checklist Obrigatório")
+        st.markdown("#### 🔹 Materiais")
+        st.checkbox("Lista de materiais validada", key="g3_ma1")
+        st.checkbox("Quantidades conferidas", key="g3_ma2")
+        st.checkbox("Materiais especiais identificados", key="g3_ma3")
+        
+        st.markdown("#### 🔹 Compras")
+        st.checkbox("Fornecedores definidos", key="g3_com1")
+        st.checkbox("Lead times confirmados", key="g3_com2")
+        st.checkbox("Datas de entrega registradas", key="g3_com3")
+        
+        st.markdown("#### 🔹 Financeiro")
+        st.checkbox("Impacto no caixa validado", key="g3_fin1")
+        st.checkbox("Compra autorizada formalmente", key="g3_fin2")
+        st.checkbox("Forma de pagamento definida", key="g3_fin3")
+        
+        st.error("❌ **Critérios de BLOQUEIO:** Material crítico não comprado, Impacto financeiro não aprovado, Lead time incompatível. ➡️ **Produção BLOQUEADA**")
 
+    # GATE 4
     with st.expander("📝 GATE 4 — LIBERAÇÃO DE ENTREGA"):
-        st.write("**Responsável:** Dono do Pedido | **Executor:** Logística")
-        st.markdown("""
-        * **Produto:** Produção concluída, Qualidade conferida, Itens separados.
-        * **Logística:** Checklist de carga, Frota definida, Rota planejada.
-        * **Prazo:** Data validada c/ logística, Cliente informado, Equipe alinhada.
-        """)
-        st.error("Critérios de Bloqueio: Produto incompleto, Falta de frota, Prazo não validado.")
+        st.write("**Objetivo:** garantir entrega sem retrabalho e improviso")
+        st.write("**Momento:** antes de prometer data ao cliente")
+        st.write("**Responsável (R):** Dono do Pedido | **Executor (E):** Logística")
+        
+        st.markdown("### Checklist Obrigatório")
+        st.markdown("#### 🔹 Produto")
+        st.checkbox("Produção concluída", key="g4_pro1")
+        st.checkbox("Qualidade conferida", key="g4_pro2")
+        st.checkbox("Itens separados por pedido", key="g4_pro3")
+        
+        st.markdown("#### 🔹 Logística")
+        st.checkbox("Checklist de carga preenchido", key="g4_log1")
+        st.checkbox("Frota definida", key="g4_log2")
+        st.checkbox("Rota planejada", key="g4_log3")
+        
+        st.markdown("#### 🔹 Prazo")
+        st.checkbox("Data validada com logística", key="g4_prz1")
+        st.checkbox("Cliente informado", key="g4_prz2")
+        st.checkbox("Equipe de montagem alinhada", key="g4_prz3")
+        
+        st.error("❌ **Critérios de BLOQUEIO:** Produto incompleto, Falta de frota adequada, Prazo não validado. ➡️ **Entrega NÃO autorizada**")
+
+    st.markdown("---")
+    st.info("**REGRA GERAL (vale para todos os Gates):** Gate sem checklist preenchido = Gate inexistente. Pedido que pula Gate = quebra de governança[cite: 487, 488].")
+    
+    st.subheader("Recomendações práticas (experiência de campo)")
+    st.write("1. Cada checklist vira formulário simples (Google / ERP)[cite: 490].")
+    st.write("2. Checklists assinados (nome + data)[cite: 491].")
+    st.write("3. Auditoria semanal: pedidos que passaram sem checklist[cite: 492].")
+    st.write("4. Primeiras 3 semanas terão atrito — isso é esperado[cite: 493].")
 
 elif secao == "15. Rotina Semanal de Governança":
     st.header("ROTINA SEMANAL DE GOVERNANÇA")
