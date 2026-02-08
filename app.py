@@ -288,20 +288,142 @@ elif secao == "12. Visão Atual vs Esperada":
     st.table(pd.DataFrame(data_mudanca))
 
 elif secao == "13. RACI e Recomendações":
-    st.header("RACI (ERCI) FORMAL – GOVERNANÇA")
-    st.write("**Legenda:** E (Executor), R (Responsável), C (Consultado), I (Informado).")
-    st.info("Regra inegociável: cada atividade tem UM único R.")
+    st.header("RACI (ERCI) FORMAL – GOVERNANÇA DO PEDIDO")
     
-    st.subheader("9️⃣ Alertas de Burla")
-    st.warning("* 'Só dessa vez libera'\n* 'Depois a gente formaliza'\n* 'É urgente'\n* 'Sempre foi assim'")
-    st.error("👉 Qualquer exceção mata o ERCI.")
-    
-    st.subheader("1️⃣0️⃣ Recomendações Práticas")
-    st.write("* O ERCI deve virar documento oficial assinado.")
-    st.write("* Gate sem R definido = pedido devolvido.")
-    st.write("* Primeiro mês vai gerar atrito → isso é sinal de sucesso.")
-    st.write("* Quem reclamar está perdendo poder informal.")
+    # Legenda oficial
+    st.markdown("""
+    **Legenda oficial**
+    * [cite_start]**E (Executor)** → Executa a atividade [cite: 309]
+    * [cite_start]**R (Responsável)** → Dono final / responde pelo resultado [cite: 310]
+    * [cite_start]**C (Consultado)** → Consultado antes da decisão [cite: 311]
+    * [cite_start]**I (Informado)** → Informado após a decisão [cite: 312]
+    """)
+    [cite_start]st.info("Regra inegociável: cada atividade tem UM único R. [cite: 313]")
 
+    st.markdown("---")
+
+    # 1. Papéis
+    st.subheader("1️⃣ Papéis (mantidos)")
+    col_p1, col_p2 = st.columns(2)
+    with col_p1:
+        [cite_start]st.write("* **COM** – Comercial [cite: 315]")
+        [cite_start]st.write("* **DP** – Dono do Pedido (Gestor da Obra/Produção) [cite: 316]")
+        [cite_start]st.write("* **PCP** – Planejamento e Controle da Produção [cite: 317]")
+        [cite_start]st.write("* **PROD** – Produção / Fábrica [cite: 318]")
+    with col_p2:
+        [cite_start]st.write("* **COMP** – Compras [cite: 319]")
+        [cite_start]st.write("* **FIN** – Financeiro [cite: 320]")
+        [cite_start]st.write("* **LOG** – Logística [cite: 321]")
+        [cite_start]st.write("* **GG** – Gerência Geral [cite: 322]")
+
+    st.markdown("---")
+
+    # 2. Tabelas RACI por fase (baseadas nas imagens fornecidas)
+    
+    # Gate 1
+    st.subheader("2️⃣ Entrada do Pedido - GATE 1 (Aceite Técnico)")
+    df_g1 = pd.DataFrame({
+        "Atividade": ["Registrar pedido no sistema", "Validar escopo técnico", "Validar viabilidade inicial de prazo", "Autorizar entrada do pedido"],
+        "COM": ["E", "C", "I", "I"],
+        "DP": ["I", "R", "R", "R"],
+        "PCP": ["I", "E", "E", "E"],
+        "FIN": ["I", "I", "C", "I"],
+        "GG": ["I", "I", "I", "I"]
+    })
+    st.table(df_g1)
+    [cite_start]st.error("🔒 Sem R (DP) definido → pedido NÃO entra [cite: 325]")
+
+    # Gate 2
+    st.subheader("3️⃣ Planejamento e Sequenciamento - GATE 2 (Liberação de Produção)")
+    df_g2 = pd.DataFrame({
+        "Atividade": ["Sequenciar pedidos", "Validar capacidade produtiva", "Proteger gargalo", "Liberar produção"],
+        "DP": ["C", "C", "I", "I"],
+        "PCP": ["R", "R", "R", "R"],
+        "PROD": ["I", "I", "E", "C"],
+        "GG": ["I", "I", "I", "I"]
+    })
+    st.table(df_g2)
+    [cite_start]st.info("👉 PCP responde pelo plano. Produção executa. [cite: 328]")
+
+    # Gate 3
+    st.subheader("4️⃣ Compras e Materiais - GATE 3 (Material Garantido)")
+    df_g3 = pd.DataFrame({
+        "Atividade": ["Definir lista de materiais", "Planejar compras", "Validar impacto no caixa", "Autorizar compra"],
+        "DP": ["R", "I", "I", "I"],
+        "PCP": ["C", "C", "I", "I"],
+        "COMP": ["E", "R", "C", "E"],
+        "FIN": ["I", "I", "R", "R"]
+    })
+    st.table(df_g3)
+    [cite_start]st.info("🔴 Financeiro é R na autorização → veto técnico real [cite: 331]")
+
+    # Produção e Mudanças
+    st.subheader("5️⃣ Produção e Mudanças de Escopo")
+    df_prod = pd.DataFrame({
+        "Atividade": ["Executar produção", "Controlar avanço do pedido", "Aprovar mudança de escopo", "Replanejar após mudança"],
+        "DP": ["I", "C", "R", "C"],
+        "PCP": ["I", "R", "C", "R"],
+        "PROD": ["R", "I", "I", "I"]
+    })
+    st.table(df_prod)
+    [cite_start]st.warning("⚠️ Mudança sem R (DP) = inválida [cite: 334]")
+
+    # Gate 4
+    st.subheader("6️⃣ Logística e Entrega - GATE 4 (Liberação de Entrega)")
+    df_g4 = pd.DataFrame({
+        "Atividade": ["Planejar entrega", "Definir frota e rota", "Validar prazo final", "Liberar entrega"],
+        "DP": ["C", "I", "R", "R"],
+        "LOG": ["R", "R", "C", "E"],
+        "FIN": ["I", "I", "I", "I"]
+    })
+    st.table(df_g4)
+    [cite_start]st.info("👉 Logística planeja, DP responde pelo prazo prometido [cite: 337]")
+
+    # Fechamento
+    st.subheader("7️⃣ Fechamento do Pedido")
+    df_fecha = pd.DataFrame({
+        "Atividade": ["Confirmar entrega ao cliente", "Encerrar pedido no sistema", "Analisar impacto financeiro final"],
+        "DP": ["R", "I", "I"],
+        "PCP": ["I", "R", "I"],
+        "FIN": ["I", "I", "R"]
+    })
+    st.table(df_fecha)
+
+    # Papel da GG
+    st.subheader("8️⃣ Papel da Gerência Geral (GG) — blindagem do sistema")
+    st.markdown("""
+    | Atividade | GG |
+    | :--- | :---: |
+    | Decidir operação diária | ❌ |
+    | Quebrar gate | ❌ |
+    | Resolver exceções recorrentes | ❌ |
+    | Garantir cumprimento do RACI | ✅ |
+    | Escalonamento crítico | ⚠️ Somente se formal |
+    """)
+    [cite_start]st.info("👉 GG é guardião da governança, não executor informal [cite: 351]")
+
+    st.markdown("---")
+
+    # 9. Alertas de Burla
+    st.subheader("9️⃣ Onde normalmente tentam burlar (alerta)")
+    st.markdown("""
+    * [cite_start]“Só dessa vez libera” [cite: 353]
+    * [cite_start]“Depois a gente formaliza” [cite: 354]
+    * [cite_start]“É urgente” [cite: 355]
+    * [cite_start]“Sempre foi assim” [cite: 356]
+    """)
+    [cite_start]st.error("👉 Qualquer exceção mata o ERCI. [cite: 357]")
+
+    st.markdown("---")
+
+    # 10. Recomendações Práticas
+    st.subheader("1️⃣0️⃣ Recomendações práticas (treinador falando)")
+    st.markdown("""
+    1. [cite_start]Esse ERCI deve virar documento oficial assinado [cite: 360]
+    2. [cite_start]Gate sem R definido = pedido devolvido [cite: 361]
+    3. [cite_start]Primeiro mês vai gerar atrito → isso é sinal de sucesso [cite: 362]
+    4. [cite_start]Quem reclamar está perdendo poder informal [cite: 363]
+    """)
 elif secao == "14. Checklists Detalhados":
     st.header("CHECKLISTS OPERACIONAIS POR GATE")
     
