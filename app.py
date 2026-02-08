@@ -411,7 +411,7 @@ elif secao == "13. RACI e Recomendações":
 
     st.markdown("---")
 
-    st.subheader("1️⃣0️⃣ Recomendações práticas (treinador falando)")
+    st.subheader("1️⃣0️⃣ Recomendações práticas")
     st.markdown("""
     1. Esse ERCI deve virar documento oficial assinado
     2. Gate sem R definido = pedido devolvido
