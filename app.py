@@ -21,28 +21,28 @@ st.sidebar.title("DIAGNÓSTICO E GOVERNANÇA")
 secao = st.sidebar.radio(
     "Navegue pelo conteúdo:",
     [
-        "0. Capa e Introdução",
-        "1. Fato Central",
-        "2. Lógica Sistêmica (Causa)",
-        "3. Manifestação por Área",
-        "4. Pontos Cegos Estratégicos",
-        "5. Riscos Reais",
-        "6. Leitura Executiva",
-        "7. Direção Lógica",
-        "8. Mapa de Governança",
-        "9. Papéis-Chave",
-        "10. Gates Formais (Bloqueios)",
-        "11. Regras e Indicadores",
-        "12. Visão Atual vs Esperada",
-        "13. RACI e Recomendações",
-        "14. Checklists Detalhados",
-        "15. Rotina Semanal de Governança"
+        "S1 - 0. Capa e Introdução",
+        "S1 - 1. Fato Central",
+        "S1 - 2. Lógica Sistêmica (Causa)",
+        "S1 - 3. Manifestação por Área",
+        "S1 - 4. Pontos Cegos Estratégicos",
+        "S1 - 5. Riscos Reais",
+        "S1 - 6. Leitura Executiva",
+        "S1 - 7. Direção Lógica",
+        "S1 - 8. Mapa de Governança",
+        "S1 - 9. Papéis-Chave",
+        "S1 - 10. Gates Formais (Bloqueios)",
+        "S1 - 11. Regras e Indicadores",
+        "S1 - 12. Visão Atual vs Esperada",
+        "S1 - 13. RACI e Recomendações",
+        "S1 - 14. Checklists Detalhados",
+        "S1 - 15. Rotina Semanal de Governança"
     ]
 )
 
 # --- CONTEÚDO INTEGRAL ---
 
-if secao == "0. Capa e Introdução":
+if secao == "S1 - 0. Capa e Introdução":
     st.image("Status Apresentação.png", use_container_width=True)
     st.title("DIAGNÓSTICO GERAL INTEGRADO")
     st.subheader("Status Marcenaria – Visão Sistêmica")
@@ -51,7 +51,7 @@ if secao == "0. Capa e Introdução":
     st.write("**Jim Rohn** – empreendedor americano e grande influência na gestão industrial dos EUA.")
     st.write("**Legenda:** Gate = Ponto de controle.")
 
-elif secao == "1. Fato Central":
+elif secao == "S1 - 1. Fato Central":
     st.header("1️⃣ Fato Central")
     st.error("A empresa não opera por sistema, opera por compensação humana.")
     st.write("""
@@ -64,7 +64,7 @@ elif secao == "1. Fato Central":
     **Onde há pessoas boas, o sistema não é forçado a existir.**
     """)
 
-elif secao == "2. Lógica Sistêmica (Causa)":
+elif secao == "S1 - 2. Lógica Sistêmica (Causa)":
     st.header("2️⃣ Lógica Sistêmica do Problema (cadeia causal)")
     
     st.subheader("❌ CAUSA PRIMÁRIA: Inexistência de governança do pedido ponta a ponta")
@@ -97,7 +97,7 @@ elif secao == "2. Lógica Sistêmica (Causa)":
     """)
     st.warning("👉 O sistema real é: **quem grita mais alto, decide.**")
 
-elif secao == "3. Manifestação por Área":
+elif secao == "S1 - 3. Manifestação por Área":
     st.header("3️⃣ Como isso se manifesta por área (efeito, não culpa)")
     
     col1, col2 = st.columns(2)
@@ -138,7 +138,7 @@ elif secao == "3. Manifestação por Área":
     st.write("* Frota subutilizada ou sobrecarregada alternadamente.")
     st.write("➡️ **Última a saber, primeira a sofrer.**")
 
-elif secao == "4. Pontos Cegos Estratégicos":
+elif secao == "S1 - 4. Pontos Cegos Estratégicos":
     st.header("4️⃣ Pontos Cegos Estratégicos (onde a empresa se engana)")
     
     st.subheader("⚠️ “Planejamento puxa a empresa”")
@@ -154,7 +154,7 @@ elif secao == "4. Pontos Cegos Estratégicos":
     st.write("* Programação,")
     st.write("* Governança de mudança.")
 
-elif secao == "5. Riscos Reais":
+elif secao == "S1 - 5. Riscos Reais":
     st.header("5️⃣ Riscos Reais se nada mudar")
     st.markdown("""
     * Margem corroída por retrabalho invisível.
@@ -165,7 +165,7 @@ elif secao == "5. Riscos Reais":
     * Qualidade e prazo baseados em heróis, não em processo.
     """)
 
-elif secao == "6. Leitura Executiva":
+elif secao == "S1 - 6. Leitura Executiva":
     st.header("6️⃣ Leitura Executiva Correta")
     st.success("O problema da Status não é operacional, é estrutural.")
     st.write("""
@@ -175,10 +175,10 @@ elif secao == "6. Leitura Executiva":
     * Produção programada,
     * Governança real,
     
-    Qualquer melhoria em compras, financeiro ou logística será paliativa.
+    Qual qualquer melhoria em compras, financeiro ou logística será paliativa.
     """)
 
-elif secao == "7. Direção Lógica":
+elif secao == "S1 - 7. Direção Lógica":
     st.header("7️⃣ Direção lógica (não plano ainda)")
     st.subheader("Ordem obrigatória de ataque:")
     st.write("1. **Dono do pedido** (autoridade real)")
@@ -188,7 +188,7 @@ elif secao == "7. Direção Lógica":
     st.write("5. **Governança financeira** com veto técnico")
     st.write("6. **Logística integrada** ao prazo, não executora cega")
 
-elif secao == "8. Mapa de Governança":
+elif secao == "S1 - 8. Mapa de Governança":
     st.header("MAPA ÚNICO DE GOVERNANÇA DO PEDIDO")
     st.subheader("Status Marcenaria — Pedido do início ao fim")
     
@@ -204,7 +204,7 @@ elif secao == "8. Mapa de Governança":
     st.markdown("### 2️⃣ Visão Geral do Fluxo (macro)")
     st.write("Comercial ➡️ Gate 1 ➡️ PCP/Produção ➡️ Gate 2 ➡️ Compras ➡️ Gate 3 ➡️ Produção/Montagem ➡️ Logística ➡️ Entrega/Fechamento")
 
-elif secao == "9. Papéis-Chave":
+elif secao == "S1 - 9. Papéis-Chave":
     st.header("3️⃣ Papéis-Chave (quem manda no quê)")
     
     st.subheader("🔴 DONO DO PEDIDO (Gestor de Produção)")
@@ -230,7 +230,7 @@ elif secao == "9. Papéis-Chave":
     st.write("* Executa com antecedência mínima.")
     st.write("* Não recebe data “goela abaixo”.")
 
-elif secao == "10. Gates Formais (Bloqueios)":
+elif secao == "S1 - 10. Gates Formais (Bloqueios)":
     st.header("4️⃣ Gates Formais (onde o pedido pode morrer)")
     
     col1, col2 = st.columns(2)
@@ -257,7 +257,7 @@ elif secao == "10. Gates Formais (Bloqueios)":
         st.write("**Checklist:** Produto conferido, Checklist de carga, Rota/Frota definidas, Prazo confirmado.")
         st.write("**Aprova:** Logística + Dono do Pedido.")
 
-elif secao == "11. Regras e Indicadores":
+elif secao == "S1 - 11. Regras e Indicadores":
     st.header("5️⃣ Regra de Ouro (sem exceção)")
     st.error("❗ Mudança de projeto = novo mini-gate")
     st.write("Toda mudança exige: registro escrito, impacto em prazo, impacto em custo e nova validação.")
@@ -270,7 +270,7 @@ elif secao == "11. Regras e Indicadores":
     st.write("Se este mapa não for implantado integralmente, ele vira “mais um desenho bonito” e o sistema informal vence de novo.")
     st.success("Governança não se negocia, se impõe.")
 
-elif secao == "12. Visão Atual vs Esperada":
+elif secao == "S1 - 12. Visão Atual vs Esperada":
     st.header("MAPA DE GOVERNANÇA DO PEDIDO")
     
     st.subheader("🚩 ATUAL (Fluxo Real Observado)")
@@ -287,7 +287,7 @@ elif secao == "12. Visão Atual vs Esperada":
     }
     st.table(pd.DataFrame(data_mudanca))
 
-elif secao == "13. RACI e Recomendações":
+elif secao == "S1 - 13. RACI e Recomendações":
     st.header("RACI (ERCI) FORMAL – GOVERNANÇA DO PEDIDO")
     
     st.markdown("""
@@ -418,7 +418,7 @@ elif secao == "13. RACI e Recomendações":
     3. Primeiro mês vai gerar atrito → isso é sinal de sucesso
     4. Quem reclamar está perdendo poder informal
     """)
-elif secao == "14. Checklists Detalhados":
+elif secao == "S1 - 14. Checklists Detalhados":
     st.header("CHECKLISTS OPERACIONAIS POR GATE")
     st.markdown("---")
 
@@ -535,7 +535,7 @@ elif secao == "14. Checklists Detalhados":
     st.write("3. Auditoria semanal: pedidos que passaram sem checklist.")
     st.write("4. Primeiras 3 semanas terão atrito — isso é esperado.")
 
-elif secao == "15. Rotina Semanal de Governança":
+elif secao == "S1 - 15. Rotina Semanal de Governança":
     st.header("ROTINA SEMANAL DE GOVERNANÇA")
     st.subheader("1️⃣ Princípio da rotina")
     st.write("Essa reunião não é operacional. Ela não resolve incêndio. Ela existe para impedir que o incêndio exista na semana seguinte.")
@@ -562,4 +562,3 @@ elif secao == "15. Rotina Semanal de Governança":
 # Rodapé lateral
 st.sidebar.markdown("---")
 st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
-
