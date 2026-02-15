@@ -48,7 +48,7 @@ secao = st.sidebar.radio("Navegue pelo conteúdo:", opcoes_menu)
 
 # --- CONTEÚDO INTEGRAL ---
 
-if secao == "0. Capa e Introdução":
+if secao == ""S1 - 0. Capa e Introdução"":
     st.image("Status Apresentação.png", use_container_width=True)
     st.title("DIAGNÓSTICO GERAL INTEGRADO")
     st.subheader("Status Marcenaria – Visão Sistêmica")
