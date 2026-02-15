@@ -567,3 +567,156 @@ elif secao == "S1 - 15. Rotina Semanal de Governança":
 # Rodapé lateral
 st.sidebar.markdown("---")
 st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
+elif secao == "S2 - 1. Módulo de Medição (Terceirizados)":
+    st.header("Módulo de Medição – Terceirizados")
+    st.info("Desenvolvido módulo específico para controle de terceiros")
+    st.markdown("""
+    **Principais Funcionalidades:**
+    * ✔ Cálculo automático por produção
+    * ✔ Deduplicação de lançamentos
+    * ✔ Retenção automática de 15%
+    * ✔ Exportação para Excel
+    * ✔ Integração com financeiro
+    """)
+    st.success("**Objetivo:** Eliminar pagamento duplicado e falta de controle de medição.")
+
+elif secao == "S2 - 2. Governança Operacional e Resultados":
+    st.header("GOVERNANÇA OPERACIONAL")
+    st.write("Foi estruturada rotina semanal com:")
+    st.markdown("""
+    * Indicador de quebra de Gate
+    * Lead time planejado vs realizado
+    * Análise de urgências geradas por falha de processo
+    * Registro formal de decisões
+    """)
+    st.warning("**Regra:** Sem registro, não existe decisão.")
+
+    st.markdown("---")
+    st.header("RESULTADOS ESPERADOS (PROJETADOS)")
+    st.markdown("""
+    * Redução de retrabalho
+    * Aumento da previsibilidade
+    * Melhoria no controle de margem
+    * Redução de conflitos internos
+    * Maior clareza hierárquica
+    * Base para crescimento escalável
+    """)
+
+    st.markdown("---")
+    st.header("PRÓXIMOS PASSOS (90 DIAS)")
+    st.markdown("""
+    * Consolidação do uso obrigatório do sistema
+    * Treinamento formal por área
+    * Auditoria interna mensal de Gates
+    * Implantação de indicadores financeiros vinculados aos CTRs
+    * Evolução para dashboard executivo
+    """)
+
+    st.markdown("---")
+    st.header("CONCLUSÃO ESTRATÉGICA")
+    st.write("A Status Marcenaria deixou de operar por improviso e passou a operar por estrutura.")
+    st.write("A governança agora não depende de memória, pressão ou boa vontade. Depende de sistema.")
+    st.info("""
+    **O modelo implantado cria base para:**
+    * Escala
+    * Profissionalização
+    * Proteção de margem
+    * Governança de longo prazo
+    """)
+
+elif secao == "S2 - 3. Diagnóstico Geral - Produção":
+    st.header("DIAGNÓSTICO GERAL – PRODUÇÃO STATUS MARCENARIA")
+    st.subheader("1️⃣ Conclusão Executiva")
+    st.error("O problema não é técnico individual. É sistêmico.")
+    
+    st.write("**A produção hoje opera em:** Modelo reativo, Prazo comercial dominante, Comunicação fragmentada, Ausência de gate técnico estruturado, Ausência de medição de desperdício, Autoridade informal e instável, Cultura predominantemente crítica e centralizadora.")
+    st.write("O sistema funciona por esforço individual, não por método.")
+
+    st.subheader("2️⃣ Padrões Repetidos em Todos os Gestores")
+    
+    with st.expander("A. Prazo nasce comercial"):
+        st.write("Todos confirmam: Prazo imposto pelo cliente/construtora, Validação concentrada na diretoria, Revisão técnica tardia, Comunicação de atraso ocorre quando já está crítico.")
+        st.warning("Diagnóstico: Prazo técnico não é premissa do processo.")
+
+    with st.expander("B. Ausência de Gate Técnico Real"):
+        st.write("Recorrência: Compra antes de aprovação, Produção sem medida in loco validada, Mudança de projeto após início, Aprovação de SD como gargalo tardio, Falta de checklist consolidado.")
+        st.warning("Diagnóstico: O pedido entra na fábrica sem estar maduro.")
+
+    with st.expander("C. Comunicação Pulverizada"):
+        st.write("Constatação geral: WhatsApp + e-mail + comunicação verbal, Engenharia falando direto com gestor, Gerência executando antes de formalizar, Problemas indo direto à diretoria.")
+        st.warning("Diagnóstico: Não existe 'dono formal do fluxo'.")
+
+    with st.expander("D. Qualidade em Declínio"):
+        st.write("Relatos críticos: 'Qualidade de mal a pior', Cliente acostumando com erro, Falta de controle antes da saída, Terceiros entregando fora do padrão, MDF usado errado.")
+        st.warning("Diagnóstico: Controle de qualidade é corretivo, não preventivo.")
+
+    with st.expander("E. Retrabalho Não Mensurado"):
+        st.write("Todos afirmam: Não há indicador, Não há métrica, Só percepção, Custo é invisível.")
+        st.warning("Diagnóstico: A empresa opera no escuro.")
+
+    with st.expander("F. PCP Frágil"):
+        st.write("PCP hoje: Mensageiro, Intermediário, Não trava fluxo, Não gera alerta formal, Não mede gargalo.")
+        st.warning("Diagnóstico: PCP não é sistema de controle. É amortecedor de ruído.")
+
+    with st.expander("G. Terceirização Desgovernada"):
+        st.write("Problemas recorrentes: Preço baixo gera qualidade baixa, Fornecedor pega outros serviços no meio, Falta tabela clara, Falta padrão de cobrança, Falta inspeção.")
+        st.warning("Diagnóstico: Economia aparente gera prejuízo oculto.")
+
+    with st.expander("H. Autoridade Instável dos Gestores"):
+        st.write("Padrão comum: Responsabilidade alta, Autonomia baixa, Interferência direta da diretoria, Decisão empírica ('feeling'), Hierarquia limita ação.")
+        st.warning("Diagnóstico: A estrutura não sustenta o papel do gestor.")
+
+    with st.expander("I. Cultura Organizacional"):
+        st.write("Elementos recorrentes: Comunicação crítica em grupo, Exposição pública, Jovens saindo, Ambiente de 'pisar em ovos', Centralização excessiva.")
+        st.warning("Diagnóstico: Cultura atual amplifica falhas de processo.")
+
+    st.subheader("3️⃣ Mapa de Causa-Raiz")
+    st.write("Comercial frágil ➡️ Orçamento desalinhado ➡️ Projeto técnico imaturo ➡️ Produção inicia sem gate ➡️ Mudanças no meio do caminho ➡️ Retrabalho ➡️ Pressão de prazo ➡️ Queda de qualidade ➡️ Cliente tolera erro ➡️ Padrão normalizado para baixo.")
+
+    st.subheader("7️⃣ Diagnóstico Final (Sem Suavizar)")
+    st.write("**Hoje a produção:** Funciona por esforço (não por sistema), funciona por experiência (não por governança), funciona por correção (não por prevenção).")
+    st.info("O modelo atual depende de: Wilson, Feeling, Improvisação, Sobre-esforço e Heróis operacionais. Isso não escala.")
+
+elif secao == "S2 - 4. Diagnóstico Organizacional - RH":
+    st.header("DIAGNÓSTICO ORGANIZACIONAL – RECURSOS HUMANOS (RH)")
+    st.error("O RH não opera como área estruturada de gestão de pessoas. Na prática, funciona como setor operacional multifuncional e 'setor tampão'.")
+
+    st.subheader("1. Papel Real (Executado)")
+    st.markdown("""
+    O RH acumula funções que extrapolam completamente sua responsabilidade:
+    * Gestão integral de viagens (passagens, alimentação, controle diário) - **Consome 95% do tempo**
+    * Manutenção da fábrica
+    * Gestão de conflitos operacionais
+    * Execução de demissões por incapacidade dos líderes
+    * Tratativa de alvarás e licenças
+    """)
+
+    st.subheader("2. Fragilidades Críticas")
+    st.warning("Registro não ocorre no primeiro dia | Período de 'teste' informal (10 dias) | Controle manual de ponto | Horas extras pagas fora de sistema.")
+    st.error("Risco central: Passivo trabalhista elevado e vulnerabilidade jurídica.")
+
+    st.subheader("3. Direcionamentos Estruturais")
+    st.success("""
+    * **Retirar imediatamente do RH:** Gestão de viagens e Manutenção da fábrica.
+    * **Definir donos claros:** Viagens (Logística), Manutenção (Responsável Técnico), Conflitos (Líder direto).
+    * **Blindar o RH:** Escopo formal respeitado e gate de entrada de demandas.
+    * **Tratar riscos urgentes:** Regularizar horas extras e implantar sistema de ponto confiável.
+    """)
+
+elif secao == "S2 - 5. Atualizações e Próximos Passos":
+    st.header("ATUALIZAÇÕES E PRÓXIMOS PASSOS")
+    
+    st.subheader("📍 Atualizações da Semana")
+    st.info("* **Sistema de Gates:** Criado controle com método ERCI, encaminhado para o PCP validar. Produção prevista para início de Março.")
+    st.info("* **Máquinas:** Conversa com Ademicon (estratégias de investimento) e envio de dados para empresa recomendada pelo Eduardo dia 16/02.")
+    st.info("* **Estratégia Milhas:** Apresentado para Eduarda o plano de acúmulo e aceleração de pontuação.")
+    
+    st.subheader("🎯 Próximos Passos (90 Dias)")
+    st.write("1. Consolidação do uso obrigatório do sistema")
+    st.write("2. Treinamento formal por área")
+    st.write("3. Auditoria interna mensal de Gates")
+    st.write("4. Dashboards executivos")
+
+# Rodapé lateral (Para garantir que apareça em todas as seções)
+st.sidebar.markdown("---")
+st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
