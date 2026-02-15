@@ -562,17 +562,14 @@ elif secao == "S1 - 15. Rotina Semanal de Governança":
     st.write("4. Pedidos com mudança sem mini-gate (Meta: ZERO).")
     st.write("5. Lead time médio real vs planejado.")
     
-    st.error("Governança vive de repetição, não de discurso.")
+   st.error("Governança vive de repetição, não de discurso.")
 
-# Rodapé lateral
-st.sidebar.markdown("---")
-st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
+# --- INÍCIO DA SEMANA 02 (S2) - CONTEÚDO INTEGRAL SEM RESUMOS ---
 
 elif secao == "S2 - 1. Módulo de Medição (Terceirizados)":
     st.header("Módulo de Medição – Terceirizados")
-    st.info("Desenvolvido módulo específico para controle de terceiros")
+    st.info("Desenvolvido módulo específico para controle de terceiros com:")
     st.markdown("""
-    **Principais Funcionalidades:**
     * ✔ Cálculo automático por produção
     * ✔ Deduplicação de lançamentos
     * ✔ Retenção automática de 15%
@@ -592,7 +589,6 @@ elif secao == "S2 - 2. Governança Operacional e Resultados":
     """)
     st.warning("**Regra:** Sem registro, não existe decisão.")
 
-    st.markdown("---")
     st.header("RESULTADOS ESPERADOS (PROJETADOS)")
     st.markdown("""
     * Redução de retrabalho
@@ -603,7 +599,6 @@ elif secao == "S2 - 2. Governança Operacional e Resultados":
     * Base para crescimento escalável
     """)
 
-    st.markdown("---")
     st.header("PRÓXIMOS PASSOS (90 DIAS)")
     st.markdown("""
     * Consolidação do uso obrigatório do sistema
@@ -613,7 +608,6 @@ elif secao == "S2 - 2. Governança Operacional e Resultados":
     * Evolução para dashboard executivo
     """)
 
-    st.markdown("---")
     st.header("CONCLUSÃO ESTRATÉGICA")
     st.write("A Status Marcenaria deixou de operar por improviso e passou a operar por estrutura.")
     st.write("A governança agora não depende de memória, pressão ou boa vontade. Depende de sistema.")
@@ -629,95 +623,109 @@ elif secao == "S2 - 3. Diagnóstico Geral - Produção":
     st.header("DIAGNÓSTICO GERAL – PRODUÇÃO STATUS MARCENARIA")
     st.subheader("1️⃣ Conclusão Executiva")
     st.error("O problema não é técnico individual. É sistêmico.")
-    
-    st.write("**A produção hoje opera em:** Modelo reativo, Prazo comercial dominante, Comunicação fragmentada, Ausência de gate técnico estruturado, Ausência de medição de desperdício, Autoridade informal e instável, Cultura predominantemente crítica e centralizadora.")
-    st.write("O sistema funciona por esforço individual, não por método.")
+    st.write("""
+    A produção hoje opera em: Modelo reativo, Prazo comercial dominante, Comunicação fragmentada, 
+    Ausência de gate técnico estruturado, Ausência de medição de desperdício, Autoridade informal e instável, 
+    Cultura predominantemente crítica e centralizadora.
+    """)
+    st.write("**O sistema funciona por esforço individual, não por método.**")
 
     st.subheader("2️⃣ Padrões Repetidos em Todos os Gestores")
     
-    with st.expander("A. Prazo nasce comercial"):
-        st.write("Todos confirmam: Prazo imposto pelo cliente/construtora, Validação concentrada na diretoria, Revisão técnica tardia, Comunicação de atraso ocorre quando já está crítico.")
-        st.warning("Diagnóstico: Prazo técnico não é premissa do processo.")
+    st.markdown("### A. Prazo nasce comercial")
+    st.write("Todos confirmam: Prazo imposto pelo cliente/construtora, Validação concentrada na diretoria, Revisão técnica tardia, Comunicação de atraso ocorre quando já está crítico.")
+    st.info("Diagnóstico: Prazo técnico não é premissa do processo.")
 
-    with st.expander("B. Ausência de Gate Técnico Real"):
-        st.write("Recorrência: Compra antes de aprovação, Produção sem medida in loco validada, Mudança de projeto após início, Aprovação de SD como gargalo tardio, Falta de checklist consolidado.")
-        st.warning("Diagnóstico: O pedido entra na fábrica sem estar maduro.")
+    st.markdown("### B. Ausência de Gate Técnico Real")
+    st.write("Recorrência: Compra antes de aprovação, Produção sem medida in loco validada, Mudança de projeto após início, Aprovação de SD como gargalo tardio, Falta de checklist consolidado.")
+    st.info("Diagnóstico: O pedido entra na fábrica sem estar maduro.")
 
-    with st.expander("C. Comunicação Pulverizada"):
-        st.write("Constatação geral: WhatsApp + e-mail + comunicação verbal, Engenharia falando direto com gestor, Gerência executando antes de formalizar, Problemas indo direto à diretoria.")
-        st.warning("Diagnóstico: Não existe 'dono formal do fluxo'.")
+    st.markdown("### C. Comunicação Pulverizada")
+    st.write("Constatação geral: WhatsApp + e-mail + comunicação verbal, Engenharia falando direto com gestor, Gerência executando antes de formalizar, Problemas indo direto à diretoria, Gestor não é o ponto único institucionalizado.")
+    st.info("Diagnóstico: Não existe “dono formal do fluxo”.")
 
-    with st.expander("D. Qualidade em Declínio"):
-        st.write("Relatos críticos: 'Qualidade de mal a pior', Cliente acostumando com erro, Falta de controle antes da saída, Terceiros entregando fora do padrão, MDF usado errado.")
-        st.warning("Diagnóstico: Controle de qualidade é corretivo, não preventivo.")
+    st.markdown("### D. Qualidade em Declínio")
+    st.write("Relatos críticos: “Qualidade de mal a pior”, Cliente acostumando com erro, Falta de controle antes da saída, Terceiros entregando fora do padrão, MDF usado errado, Mistura de materiais semelhantes.")
+    st.info("Diagnóstico: Controle de qualidade é corretivo, não preventivo.")
 
-    with st.expander("E. Retrabalho Não Mensurado"):
-        st.write("Todos afirmam: Não há indicador, Não há métrica, Só percepção, Custo é invisível.")
-        st.warning("Diagnóstico: A empresa opera no escuro.")
+    st.markdown("### E. Retrabalho Não Mensurado")
+    st.write("Todos afirmam: Não há indicador, Não há métrica, Só percepção, Custo é invisível.")
+    st.info("Diagnóstico: A empresa opera no escuro.")
 
-    with st.expander("F. PCP Frágil"):
-        st.write("PCP hoje: Mensageiro, Intermediário, Não trava fluxo, Não gera alerta formal, Não mede gargalo.")
-        st.warning("Diagnóstico: PCP não é sistema de controle. É amortecedor de ruído.")
+    st.markdown("### F. PCP Frágil")
+    st.write("PCP hoje: Mensageiro, Intermediário, Não trava fluxo, Não gera alerta formal, Não mede gargalo.")
+    st.info("Diagnóstico: PCP não é sistema de controle. É amortecedor de ruído.")
 
-    with st.expander("G. Terceirização Desgovernada"):
-        st.write("Problemas recorrentes: Preço baixo gera qualidade baixa, Fornecedor pega outros serviços no meio, Falta tabela clara, Falta padrão de cobrança, Falta inspeção.")
-        st.warning("Diagnóstico: Economia aparente gera prejuízo oculto.")
+    st.markdown("### G. Terceirização Desgovernada")
+    st.write("Problemas recorrentes: Preço baixo gera qualidade baixa, Fornecedor pega outros serviços no meio, Falta de tabela clara, Falta de padrão de cobrança, Falta de inspeção antes de envio, Falta de contrato técnico robusto.")
+    st.info("Diagnóstico: Economia aparente gera prejuízo oculto.")
 
-    with st.expander("H. Autoridade Instável dos Gestores"):
-        st.write("Padrão comum: Responsabilidade alta, Autonomia baixa, Interferência direta da diretoria, Decisão empírica ('feeling'), Hierarquia limita ação.")
-        st.warning("Diagnóstico: A estrutura não sustenta o papel do gestor.")
+    st.markdown("### H. Autoridade Instável dos Gestores")
+    st.write("Padrão comum: Responsabilidade alta, Autonomia baixa, Interferência direta da diretoria, Decisão empírica (“feeling”), Hierarquia limita ação, Gestor é cobrado por informação que não recebeu.")
+    st.info("Diagnóstico: A estrutura não sustenta o papel do gestor.")
 
-    with st.expander("I. Cultura Organizacional"):
-        st.write("Elementos recorrentes: Comunicação crítica em grupo, Exposição pública, Jovens saindo, Ambiente de 'pisar em ovos', Centralização excessiva.")
-        st.warning("Diagnóstico: Cultura atual amplifica falhas de processo.")
+    st.markdown("### I. Cultura Organizacional")
+    st.write("Elementos recorrentes: Comunicação crítica em grupo, Exposição pública, Jovens saindo, Ambiente de “pisar em ovos”, Centralização excessiva, Profissionalismo exigido sem método consolidado.")
+    st.info("Diagnóstico: Cultura atual amplifica falhas de processo.")
 
     st.subheader("3️⃣ Mapa de Causa-Raiz")
     st.write("Comercial frágil ➡️ Orçamento desalinhado ➡️ Projeto técnico imaturo ➡️ Produção inicia sem gate ➡️ Mudanças no meio do caminho ➡️ Retrabalho ➡️ Pressão de prazo ➡️ Queda de qualidade ➡️ Cliente tolera erro ➡️ Padrão normalizado para baixo.")
 
     st.subheader("7️⃣ Diagnóstico Final (Sem Suavizar)")
-    st.write("**Hoje a produção:** Funciona por esforço (não por sistema), funciona por experiência (não por governança), funciona por correção (não por prevenção).")
-    st.info("O modelo atual depende de: Wilson, Feeling, Improvisação, Sobre-esforço e Heróis operacionais. Isso não escala.")
+    st.write("Hoje a produção: Funciona por esforço (não por sistema), funciona por experiência (não por governança), funciona por correção (não por prevenção).")
+    st.warning("O modelo atual depende de: Wilson, Feeling, Improvisação, Sobre-esforço e Heróis operacionais. Isso não escala.")
+
+    st.subheader("8️⃣ Direção Estratégica Obrigatória")
+    st.write("""
+    * Gate técnico inegociável antes da produção
+    * Prazo técnico obrigatório antes do fechamento comercial
+    * Gestor como ponto único formal do pedido
+    * PCP com poder de travamento
+    * Sistema de medição de retrabalho
+    * Redesenho da governança de terceiros
+    * Checklist técnico obrigatório antes da saída
+    * Reformulação cultural da comunicação interna
+    """)
 
 elif secao == "S2 - 4. Diagnóstico Organizacional - RH":
     st.header("DIAGNÓSTICO ORGANIZACIONAL – RECURSOS HUMANOS (RH)")
-    st.error("O RH não opera como área estruturada de gestão de pessoas. Na prática, funciona como setor operacional multifuncional e 'setor tampão'.")
-
-    st.subheader("1. Papel Real (Executado)")
-    st.markdown("""
+    st.subheader("1. Diagnóstico Geral (Resumo Executivo)")
+    st.error("O RH não opera como área estruturada de gestão de pessoas. Funciona como setor operacional multifuncional e setor tampão.")
+    
+    st.subheader("2. Papel Real (Executado)")
+    st.write("""
     O RH acumula funções que extrapolam completamente sua responsabilidade:
-    * Gestão integral de viagens (passagens, alimentação, controle diário) - **Consome 95% do tempo**
-    * Manutenção da fábrica
-    * Gestão de conflitos operacionais
-    * Execução de demissões por incapacidade dos líderes
-    * Tratativa de alvarás e licenças
+    * Gestão integral de viagens (passagens, alimentação, hospedagem, controle diário) - Consome 95% do tempo.
+    * Manutenção da fábrica.
+    * Gestão de conflitos operacionais.
+    * Execução de demissões por incapacidade dos líderes.
+    * Tratativa de alvarás e licenças (bombeiros, vigilância sanitária e ambiental).
     """)
 
-    st.subheader("2. Fragilidades Críticas")
-    st.warning("Registro não ocorre no primeiro dia | Período de 'teste' informal (10 dias) | Controle manual de ponto | Horas extras pagas fora de sistema.")
-    st.error("Risco central: Passivo trabalhista elevado e vulnerabilidade jurídica.")
+    st.subheader("4. Desvios de Função Estruturais")
+    st.markdown("""
+    | Atividade | Impacto |
+    | :--- | :--- |
+    | Gestão de viagens | Consome aproximadamente 95% do tempo do RH |
+    | Manutenção da fábrica | Desvio técnico e operacional |
+    | Gestão de conflitos como decisor | Inversão de papel |
+    | Demissões conduzidas pelo RH | Risco jurídico elevado |
+    """)
 
-    st.subheader("3. Direcionamentos Estruturais")
+    st.subheader("10. Direcionamentos Estruturais")
     st.success("""
-    * **Retirar imediatamente do RH:** Gestão de viagens e Manutenção da fábrica.
-    * **Definir donos claros:** Viagens (Logística), Manutenção (Responsável Técnico), Conflitos (Líder direto).
-    * **Blindar o RH:** Escopo formal respeitado e gate de entrada de demandas.
-    * **Tratar riscos urgentes:** Regularizar horas extras e implantar sistema de ponto confiável.
+    * Retirar imediatamente do RH: Gestão de viagens, Manutenção da fábrica e Decisões de demissão.
+    * Definir donos claros: Viagens (Logística), Manutenção (Responsável técnico), Conflitos (Líder direto).
+    * Tratar riscos urgentes: Regularizar horas extras e implantar sistema de ponto confiável.
     """)
 
 elif secao == "S2 - 5. Atualizações e Próximos Passos":
     st.header("ATUALIZAÇÕES E PRÓXIMOS PASSOS")
-    
-    st.subheader("📍 Atualizações da Semana")
-    st.info("* **Sistema de Gates:** Criado controle com método ERCI, encaminhado para o PCP validar. Produção prevista para início de Março.")
-    st.info("* **Máquinas:** Conversa com Ademicon (estratégias de investimento) e envio de dados para empresa recomendada pelo Eduardo dia 16/02.")
-    st.info("* **Estratégia Milhas:** Apresentado para Eduarda o plano de acúmulo e aceleração de pontuação.")
-    
-    st.subheader("🎯 Próximos Passos (90 Dias)")
-    st.write("1. Consolidação do uso obrigatório do sistema")
-    st.write("2. Treinamento formal por área")
-    st.write("3. Auditoria interna mensal de Gates")
-    st.write("4. Dashboards executivos")
+    st.info("Nesta semana: Criamos o sistema de controle de gates com método ERCI e foi encaminhado para o PCP validar. Produção prevista para início de março.")
+    st.write("* Conversado com a gestora da Ademicon para estratégias de investimento e aquisição de máquina.")
+    st.write("* Dados enviados para empresa recomendada pelo Eduardo dia 16 para proposta de máquina.")
+    st.write("* Apresentado para Eduarda estratégia de acúmulo de milhas usando inteligência.")
 
-# Rodapé lateral (Para garantir que apareça em todas as seções)
+# --- RODAPÉ LATERAL (FINAL DE TUDO) ---
 st.sidebar.markdown("---")
 st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
