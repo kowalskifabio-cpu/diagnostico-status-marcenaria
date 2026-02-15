@@ -576,7 +576,7 @@ elif secao == "S2 - 1. Módulo de Medição (Terceirizados)":
     * ✔ **Deduplicação de lançamentos:** Sistema impede o pagamento dobrado do mesmo serviço.
     * ✔ **Retenção automática de 15%:** Cálculo automático de fundo de reserva ou impostos.
     * ✔ **Exportação para Excel:** Facilidade para o fechamento financeiro.
-    * ✔ **Integração com financeiro:** O dado sai da medição direto para a autorização de pagamento.
+    * ✔ **Integração com setor financeiro:** O dado sai da medição direto para a autorização de pagamento.
     """)
     st.success("**Objetivo Central:** Eliminar pagamento duplicado, erro humano de cálculo e falta de controle sobre o que foi realmente entregue.")
 
@@ -584,7 +584,7 @@ elif secao == "S2 - 2. Governança Operacional e Resultados":
     st.header("S2 | 2️⃣ Governança Operacional e Resultados")
     
     st.subheader("Rotina de Governança Estruturada")
-    st.write("Foi implantada uma rotina semanal focada em:")
+    st.write("Estudo final de implantação de uma rotina semanal focada em:")
     st.markdown("""
     * **Indicador de quebra de Gate:** Identificação imediata de onde o processo falhou.
     * **Lead time planejado vs realizado:** Medição real da eficiência produtiva.
@@ -668,7 +668,7 @@ elif secao == "S2 - 5. Atualizações e Próximos Passos":
     
     st.subheader("📍 O que avançou nesta semana")
     st.info("✅ **Sistema de Gates:** Estrutura ERCI finalizada e em validação pelo PCP. Produção prevista para início em Março.")
-    st.info("✅ **Investimento em Máquinas:** Negociações iniciadas com Ademicon e envio de dados técnicos para propostas de novos equipamentos.")
+    st.info("✅ **Investimento em Máquinas:** Negociações iniciadas com Ademicon e envio de dados técnicos para propostas de crédito para aquisição de novos equipamentos.")
     st.info("✅ **Estratégia Financeira:** Plano de aceleração de milhas e otimização de fluxo de caixa apresentado.")
 
     st.markdown("---")
