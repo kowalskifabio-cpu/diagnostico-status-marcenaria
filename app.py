@@ -15,30 +15,36 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- MENU LATERAL INTEGRAL ---
+# --- MENU LATERAL INTEGRAL COM S1 E S2 ---
 st.sidebar.image("Status Apresentação.png", use_container_width=True)
 st.sidebar.title("DIAGNÓSTICO E GOVERNANÇA")
-secao = st.sidebar.radio(
-    "Navegue pelo conteúdo:",
-    [
-        "0. Capa e Introdução",
-        "1. Fato Central",
-        "2. Lógica Sistêmica (Causa)",
-        "3. Manifestação por Área",
-        "4. Pontos Cegos Estratégicos",
-        "5. Riscos Reais",
-        "6. Leitura Executiva",
-        "7. Direção Lógica",
-        "8. Mapa de Governança",
-        "9. Papéis-Chave",
-        "10. Gates Formais (Bloqueios)",
-        "11. Regras e Indicadores",
-        "12. Visão Atual vs Esperada",
-        "13. RACI e Recomendações",
-        "14. Checklists Detalhados",
-        "15. Rotina Semanal de Governança"
-    ]
-)
+
+opcoes_menu = [
+    "S1 - 0. Capa e Introdução",
+    "S1 - 1. Fato Central",
+    "S1 - 2. Lógica Sistêmica (Causa)",
+    "S1 - 3. Manifestação por Área",
+    "S1 - 4. Pontos Cegos Estratégicos",
+    "S1 - 5. Riscos Reais",
+    "S1 - 6. Leitura Executiva",
+    "S1 - 7. Direção Lógica",
+    "S1 - 8. Mapa de Governança",
+    "S1 - 9. Papéis-Chave",
+    "S1 - 10. Gates Formais (Bloqueios)",
+    "S1 - 11. Regras e Indicadores",
+    "S1 - 12. Visão Atual vs Esperada",
+    "S1 - 13. RACI e Recomendações",
+    "S1 - 14. Checklists Detalhados",
+    "S1 - 15. Rotina Semanal de Governança",
+    "--- SEMANA 02 ---",
+    "S2 - 1. Módulo de Medição (Terceiros)",
+    "S2 - 2. Governança Operacional e Resultados",
+    "S2 - 3. Diagnóstico Geral - Produção",
+    "S2 - 4. Diagnóstico Organizacional - RH",
+    "S2 - 5. Atualizações e Próximos Passos"
+]
+
+secao = st.sidebar.radio("Navegue pelo conteúdo:", opcoes_menu)
 
 # --- CONTEÚDO INTEGRAL ---
 
