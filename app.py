@@ -15,7 +15,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- MENU LATERAL INTEGRAL ---
+# --- MENU LATERAL INTEGRAL COM S1 E S2 ---
 st.sidebar.image("Status Apresentação.png", use_container_width=True)
 st.sidebar.title("DIAGNÓSTICO E GOVERNANÇA")
 secao = st.sidebar.radio(
@@ -36,7 +36,12 @@ secao = st.sidebar.radio(
         "S1 - 12. Visão Atual vs Esperada",
         "S1 - 13. RACI e Recomendações",
         "S1 - 14. Checklists Detalhados",
-        "S1 - 15. Rotina Semanal de Governança"
+        "S1 - 15. Rotina Semanal de Governança",
+        "S2 - 1. Módulo de Medição (Terceirizados)",
+        "S2 - 2. Governança Operacional e Resultados",
+        "S2 - 3. Diagnóstico Geral - Produção",
+        "S2 - 4. Diagnóstico Organizacional - RH",
+        "S2 - 5. Atualizações e Próximos Passos"
     ]
 )
 
