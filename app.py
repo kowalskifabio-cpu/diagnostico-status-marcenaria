@@ -567,6 +567,7 @@ elif secao == "S1 - 15. Rotina Semanal de Governança":
 # Rodapé lateral
 st.sidebar.markdown("---")
 st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
+
 elif secao == "S2 - 1. Módulo de Medição (Terceirizados)":
     st.header("Módulo de Medição – Terceirizados")
     st.info("Desenvolvido módulo específico para controle de terceiros")
