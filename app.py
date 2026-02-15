@@ -15,7 +15,7 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-# --- MENU LATERAL INTEGRAL ---
+# --- MENU LATERAL INTEGRAL (S1 + S2) ---
 st.sidebar.image("Status Apresentação.png", use_container_width=True)
 st.sidebar.title("DIAGNÓSTICO E GOVERNANÇA")
 secao = st.sidebar.radio(
@@ -36,7 +36,12 @@ secao = st.sidebar.radio(
         "S1 - 12. Visão Atual vs Esperada",
         "S1 - 13. RACI e Recomendações",
         "S1 - 14. Checklists Detalhados",
-        "S1 - 15. Rotina Semanal de Governança"
+        "S1 - 15. Rotina Semanal de Governança",
+        "S2 - 1. Módulo de Medição (Terceirizados)",
+        "S2 - 2. Governança Operacional e Resultados",
+        "S2 - 3. Diagnóstico Geral - Produção",
+        "S2 - 4. Diagnóstico Organizacional - RH",
+        "S2 - 5. Atualizações e Próximos Passos"
     ]
 )
 
@@ -92,7 +97,7 @@ elif secao == "S1 - 2. Lógica Sistêmica (Causa)":
     st.write("""
     * Financeiro conhece o caixa, mas não tem poder de veto.
     * Compras sofre pressão para “dar um jeito”.
-    * Logística recebe datas prontas, sem participar da decisão.
+    * Logística recebe prazos prontos, sem participar da decisão.
     * Gestores “pulam o processo” quando precisam.
     """)
     st.warning("👉 O sistema real é: **quem grita mais alto, decide.**")
@@ -175,7 +180,7 @@ elif secao == "S1 - 6. Leitura Executiva":
     * Produção programada,
     * Governança real,
     
-    Qual qualquer melhoria em compras, financeiro ou logística será paliativa.
+    Qualquer melhoria em compras, financeiro ou logística será paliativa.
     """)
 
 elif secao == "S1 - 7. Direção Lógica":
@@ -316,7 +321,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
 
     st.markdown("---")
 
-    # Gate 1 - Baseado na Imagem Entrada do Pedido
+    # Gate 1
     st.subheader("2️⃣ Entrada do Pedido - GATE 1 (Aceite Técnico)")
     df_g1 = pd.DataFrame({
         "Atividade": ["Registrar pedido no sistema", "Validar escopo técnico", "Validar viabilidade inicial de prazo", "Autorizar entrada do pedido"],
@@ -329,7 +334,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     st.table(df_g1)
     st.error("🔒 Sem R (DP) definido → pedido NÃO entra")
 
-    # Gate 2 - Baseado na Imagem Planejamento e Sequenciamento
+    # Gate 2
     st.subheader("3️⃣ Planejamento e Sequenciamento - GATE 2 (Liberação de Produção)")
     df_g2 = pd.DataFrame({
         "Atividade": ["Sequenciar pedidos", "Validar capacidade produtiva", "Proteger gargalo", "Liberar produção"],
@@ -341,7 +346,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     st.table(df_g2)
     st.info("👉 PCP responde pelo plano. Produção executa.")
 
-    # Gate 3 - Baseado na Imagem Compras e Materiais
+    # Gate 3
     st.subheader("4️⃣ Compras e Materiais - GATE 3 (Material Garantido)")
     df_g3 = pd.DataFrame({
         "Atividade": ["Definir lista de materiais", "Planejar compras", "Validar impacto no caixa", "Autorizar compra"],
@@ -353,7 +358,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     st.table(df_g3)
     st.info("🔴 Financeiro é R na autorização → veto técnico real")
 
-    # Produção e Mudanças - Baseado na Imagem Produção e Mudanças
+    # Produção e Mudanças
     st.subheader("5️⃣ Produção e Mudanças de Escopo")
     df_prod = pd.DataFrame({
         "Atividade": ["Executar produção", "Controlar avanço do pedido", "Aprovar mudança de escopo", "Replanejar após mudança"],
@@ -364,7 +369,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     st.table(df_prod)
     st.warning("⚠️ Mudança sem R (DP) = inválida")
 
-    # Gate 4 - Baseado na Imagem Logística e Entrega
+    # Gate 4
     st.subheader("6️⃣ Logística e Entrega - GATE 4 (Liberação de Entrega)")
     df_g4 = pd.DataFrame({
         "Atividade": ["Planejar entrega", "Definir frota e rota", "Validar prazo final", "Liberar entrega"],
@@ -375,7 +380,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     st.table(df_g4)
     st.info("👉 Logística planeja, DP responde pelo prazo prometido")
 
-    # Fechamento - Baseado na Imagem Fechamento do Pedido
+    # Fechamento
     st.subheader("7️⃣ Fechamento do Pedido")
     df_fecha = pd.DataFrame({
         "Atividade": ["Confirmar entrega ao cliente", "Encerrar pedido no sistema", "Analisar impacto financeiro final"],
@@ -385,7 +390,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     })
     st.table(df_fecha)
 
-    # Papel da GG - Baseado na Imagem Papel da Gerência Geral
+    # Papel da GG
     st.subheader("8️⃣ Papel da Gerência Geral (GG) — blindagem do sistema")
     st.markdown("""
     | Atividade | GG |
@@ -418,6 +423,7 @@ elif secao == "S1 - 13. RACI e Recomendações":
     3. Primeiro mês vai gerar atrito → isso é sinal de sucesso
     4. Quem reclamar está perdendo poder informal
     """)
+
 elif secao == "S1 - 14. Checklists Detalhados":
     st.header("CHECKLISTS OPERACIONAIS POR GATE")
     st.markdown("---")
@@ -529,7 +535,7 @@ elif secao == "S1 - 14. Checklists Detalhados":
     st.markdown("---")
     st.info("**REGRA GERAL (vale para todos os Gates):** Gate sem checklist preenchido = Gate inexistente. Pedido que pula Gate = quebra de governança.")
     
-    st.subheader("Recomendações práticas (experiência de campo)")
+    st.subheader("Recomendações práticas")
     st.write("1. Cada checklist vira formulário simples (Google / ERP).")
     st.write("2. Checklists assinados (nome + data).")
     st.write("3. Auditoria semanal: pedidos que passaram sem checklist.")
@@ -550,7 +556,7 @@ elif secao == "S1 - 15. Rotina Semanal de Governança":
     st.write("3. **Quebra de Gate (15 min):** Qual pedido furou? Qual gate? Quem era o R?")
     st.write("4. **Ações Estruturais (10 min):** Ações que evitem repetição.")
     
-    st.subheader("4️⃣ Indicadores Semanais (Os únicos permitidos)")
+    st.subheader("4️⃣ Indicadores Semanais")
     st.write("1. % de pedidos que passaram por TODOS os Gates (Meta: ≥ 85%).")
     st.write("2. Quantidade de pedidos que quebraram Gate (Meta: cair sempre).")
     st.write("3. Urgências geradas por falha de planejamento.")
@@ -559,6 +565,118 @@ elif secao == "S1 - 15. Rotina Semanal de Governança":
     
     st.error("Governança vive de repetição, não de discurso.")
 
-# Rodapé lateral
+# --- CONTEÚDO SEMANA 2 (S2) ---
+
+elif secao == "S2 - 1. Módulo de Medição (Terceirizados)":
+    st.header("S2 | 1️⃣ Módulo de Medição – Terceirizados")
+    st.info("Desenvolvido módulo específico para controle de terceiros")
+    st.markdown("""
+    **Principais Funcionalidades:**
+    * ✔ **Cálculo automático por produção:** Valor gerado conforme o que foi executado.
+    * ✔ **Deduplicação de lançamentos:** Sistema impede o pagamento dobrado do mesmo serviço.
+    * ✔ **Retenção automática de 15%:** Cálculo automático de fundo de reserva ou impostos.
+    * ✔ **Exportação para Excel:** Facilidade para o fechamento financeiro.
+    * ✔ **Integração com financeiro:** O dado sai da medição direto para a autorização de pagamento.
+    """)
+    st.success("**Objetivo Central:** Eliminar pagamento duplicado, erro humano de cálculo e falta de controle sobre o que foi realmente entregue.")
+
+elif secao == "S2 - 2. Governança Operacional e Resultados":
+    st.header("S2 | 2️⃣ Governança Operacional e Resultados")
+    
+    st.subheader("Rotina de Governança Estruturada")
+    st.write("Foi implantada uma rotina semanal focada em:")
+    st.markdown("""
+    * **Indicador de quebra de Gate:** Identificação imediata de onde o processo falhou.
+    * **Lead time planejado vs realizado:** Medição real da eficiência produtiva.
+    * **Análise de urgências:** Classificação por área (Produção/PCP/Comercial) para educar o sistema.
+    * **Registro formal de decisões:** Ata padrão gerada em toda reunião.
+    """)
+    st.warning("**REGRA DE OURO:** Sem registro, não existe decisão. Toda quebra de gate gera uma ação estrutural.")
+
+    st.markdown("---")
+    st.subheader("🚀 Resultados Esperados (Projetados)")
+    st.markdown("""
+    * **Redução drástica de retrabalho:** Menos erros detectados apenas na montagem.
+    * **Aumento da previsibilidade:** Comercial passa a vender prazos reais.
+    * **Melhoria no controle de margem:** Redução de custos invisíveis com fretes extras e compras de última hora.
+    * **Maior clareza hierárquica:** Cada gestor sabe exatamente pelo que responde (R do RACI).
+    """)
+
+    st.markdown("---")
+    st.subheader("📅 Próximos Passos (90 Dias)")
+    st.markdown("""
+    1. **Consolidação do Sistema:** Uso obrigatório e inegociável do fluxo de gates.
+    2. **Treinamento Formal:** Capacitação técnica de cada área no novo método.
+    3. **Auditoria de Gates:** Revisão mensal de pedidos que porventura tenham burlado o sistema.
+    4. **Dashboard Executivo:** Evolução dos indicadores para visualização em tempo real.
+    """)
+
+elif secao == "S2 - 3. Diagnóstico Geral - Produção":
+    st.header("S2 | 3️⃣ Diagnóstico Geral – Produção Status Marcenaria")
+    st.subheader("Conclusão Executiva")
+    st.error("O problema não é técnico individual. É SISTÊMICO.")
+    st.write("A produção hoje opera sob um modelo reativo, onde o prazo comercial domina e a comunicação é fragmentada. O sistema funciona por esforço individual e 'heróis operacionais', não por método.")
+
+    st.markdown("---")
+    with st.expander("🔍 Padrões Repetidos Detectados"):
+        st.markdown("#### A. Prazo nasce comercial")
+        st.write("O prazo é imposto sem validação técnica prévia. A comunicação de atraso só ocorre quando a situação já é crítica.")
+        
+        st.markdown("#### B. Ausência de Gate Técnico Real")
+        st.write("Pedidos entram na fábrica imaturos. Compras ocorrem antes de aprovações finais e medidas in loco nem sempre são validadas antes do corte.")
+        
+        st.markdown("#### C. Comunicação Pulverizada")
+        st.write("Informações via WhatsApp, e-mail e verbal. Não existe um 'ponto único' de verdade para o fluxo do pedido.")
+        
+        st.markdown("#### D. Qualidade em Declínio")
+        st.write("Controle de qualidade é corretivo (na casa do cliente) e não preventivo (dentro da fábrica).")
+        
+        st.markdown("#### E. Terceirização Desgovernada")
+        st.write("Falta de tabelas claras e inspeção rigorosa. Economia aparente na contratação gera prejuízo oculto no retrabalho.")
+
+    st.markdown("---")
+    st.subheader("📌 Direção Estratégica Obrigatória")
+    st.markdown("""
+    * **Gate técnico inegociável** antes do início da produção.
+    * **PCP com poder de travamento:** Se não está pronto, não entra na linha.
+    * **Dono do pedido institucionalizado:** Uma única pessoa responde pelo fluxo de ponta a ponta.
+    * **Sistema de medição de retrabalho:** Tornar o custo do erro visível.
+    """)
+
+elif secao == "S2 - 4. Diagnóstico Organizacional - RH":
+    st.header("S2 | 4️⃣ Diagnóstico Organizacional – RH")
+    st.error("O RH hoje funciona como um 'setor tampão' e central operacional multifuncional, não como gestão de pessoas.")
+
+    st.subheader("⚠️ Desvios de Função Críticos")
+    st.write("O setor acumula funções que destroem a sua capacidade estratégica:")
+    st.markdown("""
+    * **Gestão de Viagens:** Passagens, alimentação e hospedagem consomem **95% do tempo** do setor.
+    * **Manutenção da Fábrica:** Atividades operacionais de infraestrutura.
+    * **Gestão de Conflitos Operacionais:** Líderes transferem a responsabilidade de gerir pessoas para o RH.
+    * **Alvarás e Licenças:** Tratativas burocráticas externas.
+    """)
+
+    st.subheader("🛡️ Direcionamento para Blindagem")
+    st.success("""
+    1. **Retirar Viagens do RH:** Transferir para Logística ou Assistente Administrativo dedicado.
+    2. **Manutenção para área Técnica:** Definir um responsável por infraestrutura.
+    3. **Foco em Riscos Urgentes:** Regularizar horas extras e implantar sistema de ponto biométrico/digital confiável para evitar passivo trabalhista.
+    """)
+
+elif secao == "S2 - 5. Atualizações e Próximos Passos":
+    st.header("S2 | 5️⃣ Atualizações Semanais")
+    
+    st.subheader("📍 O que avançou nesta semana")
+    st.info("✅ **Sistema de Gates:** Estrutura ERCI finalizada e em validação pelo PCP. Produção prevista para início em Março.")
+    st.info("✅ **Investimento em Máquinas:** Negociações iniciadas com Ademicon e envio de dados técnicos para propostas de novos equipamentos.")
+    st.info("✅ **Estratégia Financeira:** Plano de aceleração de milhas e otimização de fluxo de caixa apresentado.")
+
+    st.markdown("---")
+    st.subheader("🎯 Foco da Próxima Semana")
+    st.write("1. Início da fase de testes dos checklists de Gate 1 e Gate 2.")
+    st.write("2. Definição formal dos 'Donos de Pedido' para as obras do próximo mês.")
+    st.write("3. Reunião de alinhamento com a diretoria para formalização do RACI/ERCI.")
+
+# --- RODAPÉ LATERAL (FINAL DE TUDO) ---
 st.sidebar.markdown("---")
 st.sidebar.caption("Status Marcenaria - Visão Sistêmica 2026")
